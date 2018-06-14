@@ -1,0 +1,53 @@
+.card--container{
+  --hue-value: 140deg;
+  --grad-degree: 135deg;
+
+  width: calc(100% - 64px);
+  height: 40vh;
+  min-height: 200px;
+  background: hsla(var(--hue-value), 50%, 90%, 1) linear-gradient(var(--grad-degree), hsla(var(--hue-value), 50%, 94%, 1), hsla(var(--hue-value), 50%, 88%, 1));
+  margin: 0 auto;
+  border-radius: 4px;
+  padding: 64px;
+  position: relative;
+  border: 1px solid rgb(226, 226, 226);
+
+  &:before{
+    content: '';
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    left: 0;
+    top: 0;
+    background: hsla(var(--hue-value), 80%, 30%, 1);
+    z-index: -1;
+    filter: blur(30px);
+    opacity: 0.2;
+    transform: scale(0.8, 0.94) translateY(40px);
+  }
+
+  .card--title{
+    text-transform: uppercase;
+    letter-spacing: 0.1rem;
+    font-weight: 900;
+    font-size: 0.6rem;
+    color: rgb(199, 199, 199) hsla(var(--hue-value), 20%, 65%, 1);
+    position: relative;
+
+    &::after{
+      content: '';
+      position: absolute;
+      width: 40%;
+      height: 1px;
+      left: 50%;
+      bottom: -15px;
+      transform: translate(-50%, 0);
+      background: rgb(199, 199, 199);
+      background: hsla(var(--hue-value), 15%, 45%, 0.2);
+    }
+  }
+
+  .card--word{
+    color: rgb(48, 48, 48) hsla(var(--hue-value), 15%, 45%, 1);
+  }
+}
